@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-3</title>
+    <style>
+      body {
+        display: flexbox;
+        justify-items: center;
+      }
+      .rectangle {
+        border: 2px solid #000;
+        display: inline-block;
+        padding: 10px;
+        margin: 20px 0;
+        background-color: gray;
+      }
+      .rectangle a {
+        text-decoration: underline;
+        color: blue;
+        margin: 0 10px;
+      }
+      .rectangle a:not(:last-child) {
+        border-right: 1px solid #000;
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+
+    <div class="rectangle">
+      <p><b> Click any of the following links:</b></p>
+      <a href="https://example.com" target="_blank">Opens in New</a>
+      <a href="https://example.com" target="_self">Opens in Self</a>
+      <a href="https://example.com" target="_parent">Opens in Parent</a>
+      <a href="https://example.com" target="_top">Opens in Body</a>
+      <a href="mailto:example@example.com">Send email</a>
+    </div>
+  </body>
+</html>
