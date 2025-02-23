@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: block;
+      }
+      .tst2 h1 {
+        color: blue;
+        margin-left: 70px;
+      }
+      .tble td,
+      .tble th {
+        padding: 2px;
+        border: 2px solid black;
+        border-collapse: collapse;
+      }
+      .tble {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tst2">
+      <h1 style="color: blue">Registration Form</h1>
+
+      <form method="post">
+        <table class="tble">
+          <tr>
+            <td>First name</td>
+            <td>
+              <input type="text" style="width: 98%" />
+            </td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td><input type="text" style="width: 98%" /></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="password" style="width: 98%" /></td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>Re Enter Password</td>
+            <td><input type="password" style="width: 98%" /></td>
+          </tr>
+          <tr>
+            <td rowspan="2">Gender</td>
+            <td><input type="radio" name="gen" /> Male</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="gen" /> Female</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td><input type="text" style="width: 98%" /></td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td><input type="number" style="width: 98%" /></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <textarea name="address" rows="3" style="width: 98%"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td><input type="text" style="width: 98%" /></td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select>
+                <option>Choose a Country</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+                <option>Dubai</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Languages Known</td>
+            <td>
+              <input type="checkbox" />English <input type="checkbox" />Kannada
+              <input type="checkbox" />Hindi <input type="checkbox" />Telegu
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" />I Hearby declare all the given details
+              are true
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: right">
+              Login to <a href="">Ethnus</a> Website
+            </td>
+          </tr>
+        </table>
+        <div style="padding-left: 150px; padding-top: 20px">
+          <button type="submit" style="border-radius: 3px">Register</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
