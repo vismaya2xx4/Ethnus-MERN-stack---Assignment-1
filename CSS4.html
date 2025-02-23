@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoverable Sidenav Buttons</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .sidenav {
+        width: 150px; /* Initial width */
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .s1 {
+        background-color: aqua;
+      }
+      .s2 {
+        background-color: red;
+      }
+      .s3 {
+        background-color: green;
+      }
+      .s4 {
+        background-color: orange;
+      }
+      .sidenav:hover {
+        width: 250px; /* Expanded width */
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .main {
+        margin-left: 150px;
+        padding: 20px;
+        transition: margin-left 0.5s;
+      }
+
+      .sidenav:hover + .main {
+        margin-left: 250px;
+      }
+
+      .description {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <div class="s1">
+        <a href="#">Home</a>
+      </div>
+      <div class="s2">
+        <a href="#">About</a>
+      </div>
+      <div class="s3">
+        <a href="#">Services</a>
+      </div>
+      <div class="s4">
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <h1>Hoverable Sidenav Buttons</h1>
+      <p class="description">
+        Hover over the buttons in the left side navigation to open them.
+      </p>
+    </div>
+  </body>
+</html>
