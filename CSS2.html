@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bars</title>
+    <style>
+      body {
+        margin-top: 200px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+        padding: 20px;
+      }
+
+      .nav-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .vertical-container {
+        text-align: center;
+        width: 220px;
+      }
+
+      .vertical-nav {
+        width: 200px;
+        background-color: white;
+        padding: 10px;
+        border: 2px solid black;
+      }
+
+      .vertical-nav a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: blue;
+        font-size: 18px;
+        background-color: lightblue;
+      }
+
+      .vertical-nav a.active {
+        background-color: orange;
+        color: white;
+        font-weight: bold;
+      }
+
+      .vertical-nav a:hover {
+        background-color: darkorange;
+        color: white;
+      }
+
+      .horizontal-container {
+        text-align: center;
+        width: 400px;
+      }
+
+      .horizontal-nav {
+        display: flex;
+        background-color: white;
+        padding: 10px;
+        border: 2px solid black;
+        justify-content: center;
+      }
+
+      .horizontal-nav a {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: blue;
+        font-size: 18px;
+        background-color: lightgrey;
+        margin-right: px;
+        border: 1px solid grey;
+      }
+
+      .horizontal-nav a.active {
+        background-color: darkgrey;
+        color: white;
+        font-weight: bold;
+      }
+
+      .horizontal-nav a:hover {
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="vertical-container">
+        <div class="nav-title">Vertical Navigation Bar</div>
+        <div class="vertical-nav">
+          <a href="#" class="active">Home</a>
+          <a href="#">Java</a>
+          <a href="#">CSS</a>
+          <a href="#">HTML</a>
+          <a href="#">Bootstrap</a>
+        </div>
+      </div>
+
+      <div class="horizontal-container">
+        <div class="nav-title">Horizontal Navigation Bar</div>
+        <div class="horizontal-nav">
+          <a href="#" class="active">Home</a>
+          <a href="#">Java</a>
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
