@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h3 {
+        background-color: darkgreen;
+        color: white;
+        display: inline-block;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .table-container {
+        margin: 20px auto;
+        width: 50%;
+      }
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 5px;
+        background-color: #96d4d4;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px;
+        border-radius: 15px;
+        border: 1px solid black;
+      }
+      th {
+        font-weight: bold;
+        text-align: center;
+      }
+      .shape-container {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 60px);
+        gap: 15px;
+        justify-content: center;
+        margin-top: 30px;
+      }
+      .shape {
+        border: 2px solid green;
+        width: 100px;
+        height: 60px;
+      }
+      .rounded {
+        border-radius: 10px;
+      }
+      .oval {
+        border-radius: 50%;
+      }
+      .clipped-rectangle {
+        width: 100px;
+        height: 60px;
+        border: 2px solid green;
+        display: inline-block;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <table>
+        <tbody>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+          </tr>
+          <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="shape-container">
+      <div class="shape rounded"></div>
+      <div class="shape rounded"></div>
+      <div class="shape rounded"></div>
+      <div class="shape rounded"></div>
+      <div class="shape"></div>
+      <div class="shape rounded"></div>
+      <div class="shape oval"></div>
+      <div class="shape rectangle"></div>
+      <div class="shape clipped-rectangle"></div>
+    </div>
+  </body>
+</html>
