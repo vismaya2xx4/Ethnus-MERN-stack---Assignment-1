@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styled Page</title>
+    <style>
+      body {
+        background-color: white;
+        font-family: Georgia, serif;
+        margin-top: 200px;
+      }
+      .container {
+        width: 500px;
+        background-color: #d3c82e;
+        padding: 20px;
+        margin: 50px auto;
+        border: 1px dotted black;
+      }
+      .sidebar {
+        float: left;
+        width: 150px;
+      }
+      .sidebar a {
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px;
+        background: white;
+        margin: 5px 0;
+        border-right: 10px solid black;
+        color: purple;
+      }
+      .sidebar a:first-child {
+        color: purple;
+      }
+      .sidebar a:not(:first-child) {
+        color: darkblue;
+      }
+      .content {
+        margin-left: 180px;
+      }
+      h1,
+      .content p {
+        color: purple;
+      }
+      p {
+        font-size: 14px;
+      }
+      hr {
+        border: none;
+        border-top: 2px dotted purple; /* Purple dotted line */
+        margin: 10px 0;
+      }
+      .footer {
+        font-style: italic;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a href="#">Home page</a>
+        <a href="#">Musings</a>
+        <a href="#">My town</a>
+        <a href="#">Links</a>
+      </div>
+      <div class="content">
+        <h1>My first styled page</h1>
+        <p>Welcome to my styled page!</p>
+        <p>
+          It lacks images, but at least it has style. And it has links, even if
+          they don’t go anywhere...
+        </p>
+        <p>There should be more here, but I don’t know what yet.</p>
+        <hr />
+        <p class="footer">
+          <em>Made 5 April 2004<br />by myself.</em>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
