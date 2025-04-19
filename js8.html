@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        display: block;
+      }
+      .tst2 {
+        display: block;
+        justify-items: center;
+        width: 50%;
+        margin: auto;
+        background: linear-gradient(to bottom, #dcdf8c, #f47ef6db);
+      }
+      .tst2 h1 {
+        color: blue;
+        margin-left: 70px;
+      }
+      .tble td,
+      .tble th {
+        padding: 2px;
+      }
+      .tble {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+        height: 18px; /* Ensures the space is always reserved */
+        display: block; /* Ensures it doesn't collapse */
+        margin-top: 5px;
+      }
+
+      .input-wrapper {
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+      .textarea-wrapper {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+      }
+      .input-field {
+        flex: 1;
+        min-width: 0;
+      }
+      textarea.input-field {
+        resize: vertical;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      select.input-field {
+        width: 100%;
+      }
+      .butt {
+        border-radius: 10px;
+        background-color: red;
+        color: aliceblue;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-bottom: 6px;
+        border: black 2px 2px 2px 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tst2">
+      <h1 style="color: blue">Registration Form</h1>
+
+      <form method="post" onsubmit="return validateForm()">
+        <table class="tble">
+          <tr>
+            <td>First name</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="text" class="input-field" id="firstName" />
+                <span class="error" id="firstNameError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="text" class="input-field" id="lastName" />
+                <span class="error" id="lastNameError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="text" class="input-field" id="email" />
+                <span class="error" id="emailError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="password" class="input-field" id="password" />
+                <span class="error" id="passwordError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Re Enter Password</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="password" class="input-field" id="rePassword" />
+                <span class="error" id="rePasswordError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">Gender</td>
+            <td>
+              <input type="radio" name="gen" id="male" value="male" /> Male
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="radio" name="gen" id="female" value="female" />
+              Female
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="text" class="input-field" id="age" />
+                <span class="error" id="ageError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="number" class="input-field" id="phone" />
+                <span class="error" id="phoneError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>
+              <div class="textarea-wrapper">
+                <textarea
+                  name="address"
+                  rows="3"
+                  class="input-field"
+                  id="address"
+                ></textarea>
+                <span class="error" id="addressError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>
+              <div class="input-wrapper">
+                <input type="text" class="input-field" id="state" />
+                <span class="error" id="stateError"></span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Country</td>
+            <td>
+              <select id="country" class="input-field">
+                <option>Choose a Country</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+                <option>Dubai</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Languages Known</td>
+            <td>
+              <input type="checkbox" id="english" />English
+              <input type="checkbox" id="kannada" />Kannada
+              <input type="checkbox" id="hindi" />Hindi
+              <input type="checkbox" id="telegu" />Telegu
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="checkbox" id="declaration" />I Hearby declare all the
+              given details are true
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: right">
+              Login to <a href="">Ethnus</a> Website
+            </td>
+          </tr>
+        </table>
+        <div style="padding-left: 150px; padding-top: 20px">
+          <button type="submit" class="butt">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        const errorElements = document.querySelectorAll(".error");
+        errorElements.forEach((element) => {
+          element.textContent = "";
+        });
+
+        let isValid = true;
+
+        const firstName = document.getElementById("firstName").value.trim();
+        if (firstName === "") {
+          document.getElementById("firstNameError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const lastName = document.getElementById("lastName").value.trim();
+        if (lastName === "") {
+          document.getElementById("lastNameError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const email = document.getElementById("email").value.trim();
+        if (email === "") {
+          document.getElementById("emailError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const password = document.getElementById("password").value.trim();
+        const rePassword = document.getElementById("rePassword").value.trim();
+
+        if (password === "") {
+          document.getElementById("passwordError").textContent = "POOR";
+          isValid = false;
+        }
+        if (rePassword === "") {
+          document.getElementById("rePasswordError").textContent = "POOR";
+          isValid = false;
+        }
+        if (password !== "" && rePassword !== "" && password !== rePassword) {
+          document.getElementById("rePasswordError").textContent = "MISMATCH";
+          isValid = false;
+        }
+
+        const age = document.getElementById("age").value.trim();
+        if (age === "") {
+          document.getElementById("ageError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const phone = document.getElementById("phone").value.trim();
+        if (phone === "") {
+          document.getElementById("phoneError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const address = document.getElementById("address").value.trim();
+        if (address === "") {
+          document.getElementById("addressError").textContent = "POOR";
+          isValid = false;
+        }
+
+        const state = document.getElementById("state").value.trim();
+        if (state === "") {
+          document.getElementById("stateError").textContent = "POOR";
+          isValid = false;
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>
