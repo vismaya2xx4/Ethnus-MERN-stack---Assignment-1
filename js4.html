@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js4</title>
+  </head>
+  <body>
+    <fieldset>
+      <label>Show Date</label>
+      <input type="button" id="inp" value="Show Date" onclick="date()" /><br />
+      <p id="datep"></p>
+
+      <label>Show Time </label>
+      <input type="button" id="inp1" value="Show Time" onclick="time()" /><br />
+      <p id="time1"></p>
+    </fieldset>
+    <script>
+      function date() {
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth(); // Months are 0-based
+        let date = now.getDate();
+        let months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        document.getElementById(
+          "datep"
+        ).innerText = `${date}/${months[month]}/${year}`;
+      }
+      function time() {
+        let now = new Date();
+        let year = now.getFullYear();
+        let month = now.getMonth();
+        let date = now.getDate();
+        let day = now.getDay();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
+        let offset = now.getTimezoneOffset();
+        let sign = offset > 0 ? "-" : "+";
+        let hours1 = Math.floor(Math.abs(offset) / 60);
+        let minutes1 = Math.abs(offset) % 60;
+        if (hours1 < 10) hours1 = "0" + hours1;
+        console.log("GMT Time: " + now.toUTCString());
+        let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        document.getElementById(
+          "time1"
+        ).innerText = `${days[day]} ${months[month]} ${date} ${year} ${hours}:${minutes}:${seconds} GMT${sign}${hours1}${minutes1} (Indian Standard Time) `;
+      }
+    </script>
+  </body>
+</html>
