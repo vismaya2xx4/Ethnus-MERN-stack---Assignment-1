@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js2</title>
+  </head>
+  <body>
+    <input type="text" id="inp" />
+    <input type="button" value="Order" onclick="order()" />
+    <p id="result"></p>
+
+    <script>
+      function order() {
+        let n = document.getElementById("inp").value;
+        let order = n.split("").sort().join("");
+        document.getElementById("result").innerText = "Order: " + order;
+      }
+    </script>
+  </body>
+</html>
