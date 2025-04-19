@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            overflow-x: hidden; /* Prevents horizontal scroll issues */
+        }
+        h2 {
+            color: rgb(12, 12, 119);
+            margin-top: 100px; /* Ensures space below train */
+        }
+        #train-container {
+            position: relative;
+            height: 120px; /* Keeps train above text */
+        }
+        #train {
+            position: absolute;
+            top: 10px; 
+            left: 0px;
+            width: 350px;
+        }
+        button {
+            margin: 10px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="train-container">
+        <img id="train" src="https://media.colomio.com/how-to-draw/how-to-draw-a-train-8.jpg" alt="Moving Train">
+    </div>
+    
+    <h2>Click the following buttons to handle animation</h2>
+
+    <button onclick="startTrain()">Start</button>
+    <button onclick="stopTrain()">Stop</button>
+
+    <script>
+        let train = document.getElementById("train");
+        let position = 0;
+        let interval = null;
+
+        function startTrain() {
+            if (!interval) { // Prevent multiple intervals
+                interval = setInterval(() => {
+                    position += 5; 
+                    train.style.left = position + "px";
+
+                    if (position > window.innerWidth) {
+                        position = -250; // Reset when it goes out of screen
+                    }
+                }, 50);
+            }
+        }
+
+        function stopTrain() {
+            clearInterval(interval);
+            interval = null;
+        }
+    </script>
+
+</body>
+</html>
