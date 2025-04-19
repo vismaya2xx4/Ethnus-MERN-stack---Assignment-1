@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      form {
+        width: 700px;
+        margin: 50px auto;
+      }
+      .form-row {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+      label {
+        width: 100px;
+        padding-top: 5px;
+      }
+      .input-group {
+        flex: 1;
+      }
+      input,
+      textarea {
+        width: 250px;
+        padding: 5px;
+      }
+      .warning {
+        color: red;
+        font-size: 12px;
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 20px;
+        font-weight: bold;
+      }
+      .invalid {
+        border: 2px solid red;
+      }
+      button {
+        margin-left: 100px;
+        padding: 8px 20px;
+        background-color: grey;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <div class="form-row">
+        <label for="Name">Name:</label>
+        <div class="input-group">
+          <input type="text" id="Name" placeholder="name" />
+          <span id="nameWarning" class="warning"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email:</label>
+        <div class="input-group">
+          <input type="email" id="email" placeholder="abc@123" />
+          <span id="emailWarning" class="warning"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="web">Website:</label>
+        <div class="input-group">
+          <input type="url" id="web" placeholder="www.example.com" />
+          <span id="webWarning" class="warning"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="mess">Message:</label>
+        <div class="input-group">
+          <textarea id="mess" rows="3"></textarea>
+          <span id="messageWarning" class="warning"></span>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let isValid = true;
+
+        const nameInput = document.getElementById("Name");
+        const nameWarning = document.getElementById("nameWarning");
+        if (nameInput.value.trim() === "") {
+          isValid = false;
+          nameInput.classList.add("invalid");
+          nameWarning.textContent = "This field is required.";
+        } else {
+          nameInput.classList.remove("invalid");
+          nameWarning.textContent = "";
+        }
+
+        const emailInput = document.getElementById("email");
+        const emailWarning = document.getElementById("emailWarning");
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailInput.value)) {
+          isValid = false;
+          emailInput.classList.add("invalid");
+          emailWarning.textContent = "A valid email address is required";
+        } else {
+          emailInput.classList.remove("invalid");
+          emailWarning.textContent = "";
+        }
+
+        const webInput = document.getElementById("web");
+        const webWarning = document.getElementById("webWarning");
+        const webPattern =
+          /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/\S*)?$/;
+
+        if (!webPattern.test(webInput.value) || webInput.value.trim() !== "") {
+          isValid = false;
+          webInput.classList.add("invalid");
+          webWarning.textContent = " A valid URL is required";
+        } else {
+          webInput.classList.remove("invalid");
+          webWarning.textContent = "";
+        }
+
+        const messageInput = document.getElementById("mess");
+        const messageWarning = document.getElementById("messageWarning");
+        if (!messageInput.value.trim()) {
+          isValid = false;
+          messageInput.classList.add("invalid");
+          messageWarning.textContent = "A field is required.";
+        } else {
+          messageInput.classList.remove("invalid");
+          messageWarning.textContent = "";
+        }
+
+        if (isValid) {
+          alert("Form submitted successfully!");
+        }
+      });
+    </script>
+  </body>
+</html>
